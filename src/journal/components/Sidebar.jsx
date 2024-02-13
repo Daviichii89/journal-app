@@ -17,17 +17,16 @@ export const Sidebar = ({ drawerWidth = 240, mobileOpen, handleDrawerToggle }) =
   const [itsMobile, setItsMobile] = useState(true)
   const { displayName, photoURL } = useSelector((state) => state.auth);
   const { notes } = useSelector((state) => state.journal);
+  console.log(mobileOpen)
 
   useEffect(() => {
-    window.addEventListener('resize', () => {
-      if (window.innerWidth <= 599) {
-        setItsMobile(true)
-      }
-      else {
-        setItsMobile(false)
-      }
-    })
-  }, [itsMobile])
+    if (window.innerWidth <= 599) {
+      setItsMobile(true)
+    }
+    else {
+      setItsMobile(false)
+    }
+  }, [])
 
 
   return (
