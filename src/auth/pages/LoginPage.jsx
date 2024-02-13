@@ -74,23 +74,26 @@ export const LoginPage = () => {
                 Login
               </Button>
             </Grid>
-            <Grid item xs={12} sm={6}>
-              <Button
-                disabled={isAuthenticating}
-                variant="contained"
-                fullWidth
-                onClick={onGoogleSignIn}
-              >
-                <Google />
-                <Typography sx={{ ml: 1 }}>Google</Typography>
-              </Button>
+            <Grid container direction="row" justifyContent="end">
+              <Typography sx={{ mr: 1 }}>¿No tienes una cuenta?</Typography>
+              <Link component={RouterLink} color="inherit" to="/auth/register">
+                Crear una cuenta
+              </Link>
             </Grid>
           </Grid>
-          <Grid container direction="row" justifyContent="end">
-            <Typography sx={{ mr: 1 }}>¿No tienes una cuenta?</Typography>
-            <Link component={RouterLink} color="inherit" to="/auth/register">
-              Crear una cuenta
-            </Link>
+          <Grid item xs={14} sm={16}>
+            <Typography>
+              - o -
+            </Typography>
+            <Button
+              disabled={isAuthenticating}
+              variant="contained"
+              fullWidth
+              onClick={onGoogleSignIn}
+            >
+              <Google />
+              <Typography sx={{ ml: 1 }}>Google</Typography>
+            </Button>
           </Grid>
         </Grid>
       </form>
